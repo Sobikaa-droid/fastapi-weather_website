@@ -89,3 +89,9 @@ desktop.ini
 *.pid
 *.sock
 
+# ========================
+# Alembic (not needed for this app without DB)
+# ========================
+alembic/
+alembic.ini
+
