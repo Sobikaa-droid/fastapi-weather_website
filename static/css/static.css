@@ -1,0 +1,260 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-menu {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+.modal-content {
+  background-color: black;
+}
+
+#content {
+  padding: 3rem 0 0 0;
+}
+
+.border-grayish {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+}
+
+.weather_container {
+  background:
+    /* Noise texture */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E"),
+    /* Your rainbow gradient */
+    linear-gradient(
+      45deg,
+      rgba(255, 0, 0, 0.1) 0%,
+      rgba(255, 165, 0, 0.08) 20%,
+      rgba(255, 255, 0, 0.06) 40%,
+      rgba(0, 255, 0, 0.08) 60%,
+      rgba(0, 0, 255, 0.1) 80%,
+      rgba(75, 0, 130, 0.08) 100%
+    ),
+    /* Black base */
+    #000;
+  min-height: 100vh;
+}
+
+/*.weather-graph {*/
+/*  display: flex;*/
+/*  align-items: flex-end;*/
+/*  justify-content: space-between;*/
+/*  padding: 20px 10px;*/
+/*}*/
+
+/*.graph-column {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: center;*/
+/*  width: 40px;*/
+/*}*/
+
+.weather-graph-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.weather-graph {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex: 1;
+    height: 200px;
+    position: relative;
+    padding: 20px 0;
+}
+
+.hour-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    height: 100%;
+}
+
+.temp-bar {
+    width: 25px;
+    background: linear-gradient(to top, #e74c3c, #f39c12);
+    border-radius: 3px 3px 0 0;
+    position: absolute;
+    bottom: 0;
+    transition: height 0.3s ease;
+    z-index: 1;
+}
+
+/* Different colors for positive and negative temperatures */
+.hour-column[data-temp^="-"] .temp-bar {
+    background: linear-gradient(to top, #3498db, #2ecc71);
+}
+
+.time-label {
+    position: absolute;
+    bottom: -30px;
+    white-space: nowrap;
+}
+
+.temp-label {
+    position: absolute;
+    top: calc(100% - 30px); /* Will be positioned by JS */
+    font-size: 11px;
+    color: #333;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* */
+
+.btn-rainbow {
+  background: linear-gradient(to top, #344c69, #21548d);
+}
+
+.link-rainbow {
+  background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.graph-bar {
+  width: 25px;
+  background: linear-gradient(to top, #344c69, #21548d);
+  border-radius: 3px 3px 0 0;
+  min-height: 5px; /* Ensvisibility even for low values */
+  transition: height 0.3s ease;
+}
+
+/* login and signup forms */
+.form_container {
+  margin: 12% 0 0 0;
+}
+
+/* home page content */
+#home_content {
+  padding: 2rem 0 2rem 0;
+  border-radius: 25px;
+  position: relative;
+}
+
+/* CARDS CARDS CARDS CARDS CARDS */
+.card_col {
+  margin-bottom: 4.49rem !important;
+}
+
+.card {
+  --bs-card-border-radius: 25px;
+  border-width: 1px;
+}
+
+.card-footer {
+    background-color: transparent;
+}
+
+.row>* {
+  padding-right: calc(var(--bs-gutter-x) * 1.5);
+  padding-left: calc(var(--bs-gutter-x) * 1.5);
+  margin-top: var(--bs-gutter-y);
+}
+
+.cards_row {
+  margin-top: calc(-1.5 * var(--bs-gutter-y));
+  margin-right: calc(-1.5 * var(--bs-gutter-x));
+  margin-left: calc(-1.5 * var(--bs-gutter-x));
+  margin-top: 4.5rem !important;
+}
+
+.fa_cards {
+  font-size: 5.5rem;
+}
+
+/* Create card */
+.create_card:hover .card-title {
+  color: white !important;
+}
+
+.create_card:hover .fa-calendar-plus {
+  color: white !important;
+}
+
+.create_card:hover {
+  background-color: #b5575f !important;
+}
+
+.fa-calendar-plus {
+  color: #b5575f;
+}
+
+/* Edit card */
+.edit_card:hover .card-title {
+  color: white !important;
+}
+
+.edit_card:hover .fa-square-pen {
+  color: white !important;
+}
+
+.edit_card:hover {
+  background-color: #b3b156 !important;
+}
+
+.fa-square-pen {
+  color: #b3b156;
+}
+
+/* Complete card */
+.complete_card:hover .card-title {
+  color: white !important;
+}
+
+.complete_card:hover .fa-calendar-check {
+  color: white !important;
+}
+
+.complete_card:hover {
+  background-color: #56b36d !important;
+}
+
+.fa-calendar-check {
+  color: #56b36d;
+}
+
+/* line with link */
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #adb5bd;
+  opacity: .25;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .25em;
+}
+
+/* footer */
+footer {
+  margin: auto 0 0 0;
+}
